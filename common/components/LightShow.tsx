@@ -7,12 +7,17 @@ import { nunito } from "../styles/fonts";
 export default function LightShow() {
   return (
     <>
-      <div className="flex flex-col w-screen gap-5 mt-24 items-center justify-center">
+      <motion.div
+        className="flex flex-col w-screen gap-5 items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <p className={`text-white text-3xl font-bold ${nunito.className}`}>
           Crafting Excellence, Code by Code.
         </p>
         <LightFragment count={20} />
-      </div>
+      </motion.div>
     </>
   );
 }
