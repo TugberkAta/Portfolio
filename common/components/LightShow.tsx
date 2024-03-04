@@ -40,7 +40,7 @@ export function LightFragment({ count }: LightFragmentProps) {
     const tempArr = []; // Create temp array to store the fragment objects
 
     // For loop to create the fragment objects and put them into fragmentArr state
-    for (let index = 0; index < amount; index++) {
+    for (let index = amount; index > 0; index--) {
       const width = (index + 1) * 20; // Width gets higher on every iteration
       const transitionDelay = -index * 0.2; // Delay to keep them out of synch
 
@@ -51,7 +51,7 @@ export function LightFragment({ count }: LightFragmentProps) {
       };
       tempArr.push(fragment);
     }
-    setFragmentArr(tempArr.reverse());
+    setFragmentArr(tempArr);
   }
 
   return (
