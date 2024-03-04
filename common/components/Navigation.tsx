@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // Array of every tab to be shown in the nav bar
-let tabs = [
+const tabs = [
   { id: "Homepage" },
   { id: "Projects" },
   { id: "Resume" },
-  { id: "Content" },
+  { id: "Contact" },
 ];
 
 export default function Navigation() {
@@ -17,7 +17,7 @@ export default function Navigation() {
 
   return (
     <div
-      className="flex justify-center items-center text-lg w-full h-16 text-white"
+      className="flex justify-center items-center text-lg w-full h-24 text-white"
       onMouseLeave={() => setActiveTab(tabs[0].id)}
     >
       <div className="w-96">
