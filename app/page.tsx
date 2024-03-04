@@ -5,9 +5,11 @@ import Navigation from "@/common/components/Navigation";
 export default function Home() {
   return (
     <>
-      <div className="bg-black h-fit w-screen">
+      <div className="bg-gray-950 flex-col h-fit w-screen">
         <Navigation />
-        <LightShow />
+        <div className="mt-20 mb-40">
+          <LightShow />
+        </div>
         <AboutMe />
       </div>
     </>
