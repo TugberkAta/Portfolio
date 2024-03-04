@@ -10,18 +10,39 @@ import typeScriptIcon from "../../public/typescript.svg";
 import reactIcon from "../../public/react.svg";
 import mongoDbIcon from "../../public/mongodb.svg";
 import swiftIcon from "../../public/swift.svg";
-
-import { nunito } from "../styles/fonts";
-import { SiTailwindcss } from "react-icons/si";
-import { TbBrandTypescript } from "react-icons/tb";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 export default function AboutMe() {
+  const introductionRef = useRef(null);
+  const skillLogosRef = useRef(null);
+
+  const { scrollYProgress: scrollYProgressIntroduction } = useScroll({
+    target: introductionRef,
+    offset: ["start end", "start center"],
+  });
+
+  const { scrollYProgress: scrollYProgressSkillLogos } = useScroll({
+    target: skillLogosRef,
+    offset: ["start 0.9", "start center"],
+  });
+
   return (
     <>
-      <Introduction />
-      {/*Temporary margin*/}
-      <div className="mt-20"></div>
-      <SkillLogos />
+      <motion.div
+        ref={introductionRef}
+        style={{ opacity: scrollYProgressIntroduction }}
+        className="mb-32"
+      >
+        <Introduction />
+      </motion.div>
+
+      <motion.div
+        ref={skillLogosRef}
+        style={{ opacity: scrollYProgressSkillLogos }}
+      >
+        <SkillLogos />
+      </motion.div>
       <div className="h-screen"></div>
     </>
   );
@@ -30,7 +51,7 @@ export default function AboutMe() {
 export function Introduction() {
   return (
     <>
-      <p className={` text-white mt-32 text-5xl text-center font-bold `}>
+      <p className={` text-white text-5xl text-center font-bold `}>
         I'm Tuğberk,
         <br /> An aspiring Full Stack developer
         <br /> who brings
