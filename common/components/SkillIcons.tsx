@@ -14,14 +14,14 @@ import { useRef } from "react";
 import Image from "next/image";
 
 const iconArray = [
-  { height: 200, width: 200, alt: "Express Icon", src: expressIcon },
-  { height: 50, width: 50, alt: "Framer Motion Icon", src: framerMotionIcon },
-  { height: 160, width: 160, alt: "Next Js Icon", src: nextJsIcon },
-  { height: 120, width: 120, alt: "nodejs Icon", src: nodeJsIcon },
-  { height: 300, width: 200, alt: "Tailwind Icon", src: tailwindCssIcon },
   { height: 90, width: 90, alt: "TypeScript Icon", src: typeScriptIcon },
   { height: 90, width: 90, alt: "React Icon", src: reactIcon },
+  { height: 160, width: 160, alt: "Next Js Icon", src: nextJsIcon },
+  { height: 200, width: 200, alt: "Express Icon", src: expressIcon },
+  { height: 300, width: 200, alt: "Tailwind Icon", src: tailwindCssIcon },
+  { height: 120, width: 120, alt: "nodejs Icon", src: nodeJsIcon },
   { height: 180, width: 180, alt: "Mongo Db Icon", src: mongoDbIcon },
+  { height: 50, width: 50, alt: "Framer Motion Icon", src: framerMotionIcon },
   { height: 90, width: 90, alt: "Swift Icon", src: swiftIcon },
 ];
 
@@ -50,10 +50,24 @@ export default function SkillIcons() {
           ))}
         </div>
         <div className="flex gap-20 w-full justify-center items-center flex-wrap">
-          {iconArray.slice(4).map((icon, i) => (
+          {iconArray.slice(4, 7).map((icon, i) => (
             <Icon
               key={icon.alt}
               index={i + 4}
+              total={iconArray.length}
+              height={icon.height}
+              width={icon.width}
+              alt={icon.alt}
+              src={icon.src}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
+        </div>
+        <div className="flex gap-20 w-full justify-center items-center flex-wrap">
+          {iconArray.slice(7).map((icon, i) => (
+            <Icon
+              key={icon.alt}
+              index={i + 7}
               total={iconArray.length}
               height={icon.height}
               width={icon.width}
