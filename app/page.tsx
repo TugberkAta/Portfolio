@@ -3,24 +3,15 @@
 import Introduction from "@/common/components/Introduction";
 import LightShow from "@/common/components/LightShow";
 import Navigation from "@/common/components/Navigation";
+import Projects from "@/common/components/Projects";
 import SkillIcons from "@/common/components/SkillIcons";
-import Lenis from "@studio-freight/lenis/types";
-import { useEffect } from "react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: any) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
+  const lenis = useLenis(({ scroll }) => {});
 
   return (
-    <>
+    <ReactLenis root>
       <div className="bg-gray-950 flex-col h-fit w-screen">
         <Navigation />
         <div className="mt-20 mb-40">
@@ -28,8 +19,9 @@ export default function Home() {
         </div>
         <Introduction></Introduction>
         <SkillIcons></SkillIcons>
+        <Projects></Projects>
         <div className="h-screen"></div>
       </div>
-    </>
+    </ReactLenis>
   );
 }
