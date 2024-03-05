@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import expressIcon from "../../public/icons/express.svg";
 import framerMotionIcon from "../../public/icons/framermotion.svg";
 import nextJsIcon from "../../public/icons/nextjs.svg";
@@ -10,9 +9,9 @@ import typeScriptIcon from "../../public/icons/typescript.svg";
 import reactIcon from "../../public/icons/react.svg";
 import mongoDbIcon from "../../public/icons/mongodb.svg";
 import swiftIcon from "../../public/icons/swift.svg";
-import { easeIn, motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import useMousePosition from "../lib/useMousePosition";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
 
 const iconArray = [
   { height: 200, width: 200, alt: "Express Icon", src: expressIcon },
@@ -26,87 +25,7 @@ const iconArray = [
   { height: 90, width: 90, alt: "Swift Icon", src: swiftIcon },
 ];
 
-export default function AboutMe() {
-  return (
-    <>
-      <Introduction />
-      <SkillIcons />
-      <div className="h-screen"></div>
-    </>
-  );
-}
-
-export function Introduction() {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "start center"],
-  });
-
-  const [isHovered, setIsHovered] = useState(false);
-  const [maskSize, setMaskSize] = useState(0);
-
-  useEffect(() => {
-    setMaskSize(isHovered ? 200 : 0);
-  }, [isHovered]);
-
-  const mousePosition = useMousePosition();
-
-  // Provide fallback values for mousePosition.x and mousePosition.y
-  const mouseX = mousePosition.mousePosition.x ?? 0;
-  const mouseY = mousePosition.mousePosition.y ?? 0;
-
-  return (
-    <>
-      <div className="relative text-white text-5xl text-center mt-20 mb-20 font-bold">
-        <motion.p
-          ref={ref}
-          style={{ opacity: scrollYProgress }}
-          animate={{
-            WebkitMaskPosition: `${mouseX - maskSize / 2}px ${
-              mouseY - maskSize / 2 - mousePosition.totalScrollY / 8
-            }px`,
-            WebkitMaskSize: `${maskSize}px`,
-          }}
-          transition={{ type: "tween", ease: "backOut" }}
-          className="absolute w-full  text-green-400 bg-white mask p-32 z-10 cursor-none"
-          onMouseEnter={() => {
-            setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            setIsHovered(false);
-          }}
-        >
-          I'm Tuğberk,
-          <br /> An aspiring Full Stack developer
-          <br /> who brings
-          <span className="text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-green-700 to-blue-800 p-2">
-            passionate
-          </span>
-          <br /> experiences that engages users and <br />
-          makes a difference.
-        </motion.p>
-        <motion.p
-          ref={ref}
-          style={{ opacity: scrollYProgress }}
-          className="p-32"
-        >
-          I'm Tuğberk,
-          <br /> An aspiring Full Stack developer
-          <br /> who brings
-          <span className="text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-green-700 to-blue-800 p-2">
-            interactive
-          </span>
-          <br /> experiences that engages users and <br />
-          makes a difference.
-        </motion.p>
-      </div>
-    </>
-  );
-}
-
-export function SkillIcons() {
+export default function SkillIcons() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

@@ -1,6 +1,7 @@
-import AboutMe from "@/common/components/AboutMe";
+import Introduction from "@/common/components/Introduction";
 import LightShow from "@/common/components/LightShow";
 import Navigation from "@/common/components/Navigation";
+import SkillIcons from "@/common/components/SkillIcons";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
         <div className="mt-20 mb-40">
           <LightShow />
         </div>
-        <AboutMe />
+        <Introduction></Introduction>
+        <SkillIcons></SkillIcons>
       </div>
     </>
   );
