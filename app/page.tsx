@@ -19,7 +19,9 @@ export default function Home() {
         </div>
         <Introduction></Introduction>
         <SkillIcons></SkillIcons>
-        <Projects></Projects>
+        <div className="mt-40 mb-20">
+          <Projects></Projects>
+        </div>
         <div className="h-screen"></div>
       </div>
     </ReactLenis>
