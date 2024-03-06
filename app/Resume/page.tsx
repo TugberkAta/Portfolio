@@ -4,8 +4,8 @@ export default function Resume() {
   return (
     <>
       <embed
-        className="h-full w-full h-screen"
-        src="https://drive.google.com/file/d/1lIe0ozSc8E2Bfrs1qYxL2TBUERp2vemV/preview?usp=sharing"
+        className=" w-full h-screen"
+        src="https://drive.google.com/file/d/14Ahu47dTE54lTagEJTLvor2m6k5T8QeY/preview?usp=sharing"
         type=""
       />
     </>
