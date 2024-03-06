@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: black;
+}
+
 .mask {
   mask-image: url(../../public/mask.svg);
   mask-repeat: no-repeat;
