@@ -18,7 +18,7 @@ export default function Home() {
         <Navigation />
         <div className="mt-20 mb-40 flex flex-col items-center">
           <p
-            className={`text-white text-3xl mb-4 font-bold ${nunito.className}`}
+            className={`text-white text-center text-3xl mb-4 font-bold ${nunito.className}`}
           >
             Crafting Excellence, Code by Code.
           </p>
