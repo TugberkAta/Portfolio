@@ -16,7 +16,7 @@ export default function Conclusion() {
 
   const firstText = "Interested in Working Together?".split(" ");
   return (
-    <div className="mt-60 mr-4 ml-4 mb-6" id="Contact">
+    <div className="mt-60" id="Contact">
       <motion.div
         ref={ref}
         className=" mb-80 flex flex-col items-center gap-4 "

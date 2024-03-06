@@ -27,7 +27,7 @@ export default function Introduction() {
 
   return (
     <>
-      <div className="relative flex items-center md:block justify-center text-white text-5xl text-center mt-20 mb-20 font-bold">
+      <div className="relative flex items-center md:block justify-center text-white text-3xl md:text-5xl text-center mt-20 mb-20 font-bold">
         <motion.p
           aria-hidden="true"
           ref={ref}
@@ -40,7 +40,7 @@ export default function Introduction() {
             WebkitMaskSize: `${maskSize}px`,
           }}
           transition={{ type: "tween", ease: "backOut" }}
-          className="absolute w-full hidden md:block text-green-400 bg-white mask p-32 z-10 md:cursor-none"
+          className="absolute w-full hidden md:block text-green-400 bg-white mask md:p-32 z-10 md:cursor-none"
           onMouseEnter={() => {
             setIsHovered(true);
           }}
@@ -49,7 +49,7 @@ export default function Introduction() {
           }}
         >
           {/* Mask layer that shows when hovered*/}
-          I'm Tuğberk,
+          I&apos;m Tuğberk,
           <br /> An aspiring Full Stack developer
           <br /> who brings
           <span className="text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-green-700 to-blue-800 p-2">
@@ -63,9 +63,9 @@ export default function Introduction() {
         <motion.p
           ref={ref}
           style={{ opacity: scrollYProgress }}
-          className="p-32"
+          className="md:p-32"
         >
-          I'm Tuğberk,
+          I&apos;m Tuğberk,
           <br /> An aspiring Full Stack developer
           <br /> who brings
           <span className="size-fit text-transparent bg-clip-text font-extrabold bg-gradient-to-r from-green-700 to-blue-800 p-2">
