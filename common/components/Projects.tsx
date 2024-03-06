@@ -76,9 +76,9 @@ export default function Projects() {
 
         {projectArray.map((project, i) => (
           <div key={i} className="flex flex-col ">
-            <div className="relative flex-col items-center md:items-end flex md:pr-28">
-              <div className="mb-20 md:mb-0">
-                <div className="flex justify-center md:justify-normal items-center gap-4 mb-6 ">
+            <div className="flex-col items-center flex">
+              <div className="relative mb-20 md:mb-0">
+                <div className="flex justify-center items-center gap-4 mb-6 ">
                   <h2 className="text-white text-2xl md:text-4xl font-bold">
                     {project.name}
                   </h2>
@@ -99,7 +99,7 @@ export default function Projects() {
                   alt={project.alt}
                   className="rounded-md"
                 />
-                <div className="flex h-20 items-center gap-4 md:mt-6 mb-8 md:mb-20 flex-wrap">
+                <div className="flex h-20 items-center gap-4 mt-6 mb-8 md:mb-20 flex-wrap">
                   {project.projectIcons.map((icon) => (
                     <Image
                       key={icon.alt}
@@ -110,19 +110,18 @@ export default function Projects() {
                     />
                   ))}
                 </div>
+                {project.mobileAlt && (
+                  <Image
+                    key={project.mobileAlt}
+                    height={900}
+                    width={179}
+                    src={project.mobileSrc}
+                    alt={project.mobileAlt}
+                    className="hidden md:block absolute right-10 z-10 bottom-28 rounded-md"
+                  />
+                )}
               </div>
             </div>
-
-            {project.mobileAlt && (
-              <Image
-                key={project.mobileAlt}
-                height={900}
-                width={179}
-                src={project.mobileSrc}
-                alt={project.mobileAlt}
-                className="hidden md:block rounded-md flex-grow-0 self-end z-20 -mt-60 mr-20"
-              />
-            )}
           </div>
         ))}
       </div>
