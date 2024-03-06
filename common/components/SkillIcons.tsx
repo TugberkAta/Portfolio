@@ -13,6 +13,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
+// Icon array to be used in mapping of icons
 const iconArray = [
   { height: 90, width: 90, alt: "TypeScript Icon", src: typeScriptIcon },
   { height: 90, width: 90, alt: "React Icon", src: reactIcon },
@@ -26,6 +27,7 @@ const iconArray = [
 ];
 
 export default function SkillIcons() {
+  // Getting the value of scrollY for responsive opacity change on scroll
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -53,7 +55,7 @@ export default function SkillIcons() {
           {iconArray.slice(4, 7).map((icon, i) => (
             <Icon
               key={icon.alt}
-              index={i + 4}
+              index={i + 4} // Adding the already offset index to regulate the animation
               total={iconArray.length}
               height={icon.height}
               width={icon.width}
@@ -99,10 +101,12 @@ export function Icon({
   total,
   scrollYProgress,
 }: IconProps & { index: number; total: number }) {
+  // Calculating the start and end values for the object
   const start = index / total;
   const end = start + 1 / total;
 
-  const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
+  // Depending on the start and end values make them delay
+  const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]); // The shadow value starts at 0.1 to add an outline
 
   return (
     <motion.div style={{ opacity: opacity }}>
