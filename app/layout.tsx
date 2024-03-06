@@ -4,7 +4,7 @@ import { inter } from "@/common/styles/fonts";
 
 export const metadata: Metadata = {
   title: "Tuğberk Ata",
-  description: "Tuğberk Ata Portfolio Site",
+  description: "The Portfolio Site For Tuğberk Ata",
 };
 
 export default function RootLayout({
