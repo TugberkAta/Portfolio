@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // Array of every tab to be shown in the nav bar
 const tabs = [
@@ -11,9 +11,24 @@ const tabs = [
   { id: "Contact" },
 ];
 
+interface tab {
+  id: string;
+}
+
 export default function Navigation() {
   // State for updating the active tab
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  function onClickNavigate(tab: tab) {
+    if (tab.id === "Resume") {
+      location.href = "/Resume";
+    } else {
+      const projectsElement = document.getElementById(tab.id);
+      if (projectsElement) {
+        projectsElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
 
   return (
     <div
@@ -24,10 +39,12 @@ export default function Navigation() {
         <div className="flex justify-center gap-4">
           {/* Map the tab array into link components */}
           {tabs.map((tab) => (
-            <a
+            <button
               key={tab.id}
-              href=""
               className={"relative"}
+              onClick={() => {
+                onClickNavigate;
+              }}
               onMouseEnter={() => setActiveTab(tab.id)}
             >
               {tab.id}
@@ -39,7 +56,7 @@ export default function Navigation() {
                   transition={{ duration: 0.7, type: "spring" }}
                 ></motion.div>
               )}
-            </a>
+            </button>
           ))}
         </div>
       </div>
