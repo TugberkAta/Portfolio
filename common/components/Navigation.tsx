@@ -21,7 +21,7 @@ export default function Navigation() {
 
   function onClickNavigate(tab: tab) {
     if (tab.id === "Resume") {
-      location.href = "/Resume";
+      window.open("/Resume", "_blank");
     } else {
       const projectsElement = document.getElementById(tab.id);
       if (projectsElement) {
@@ -43,7 +43,7 @@ export default function Navigation() {
               key={tab.id}
               className={"relative"}
               onClick={() => {
-                onClickNavigate;
+                onClickNavigate(tab);
               }}
               onMouseEnter={() => setActiveTab(tab.id)}
             >
