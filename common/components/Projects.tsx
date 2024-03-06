@@ -42,23 +42,78 @@ export default function Projects() {
 
   return (
     <>
-      <div className="hidden md:block">
-        <motion.p
-          ref={ref}
-          style={{ opacity: scrollYProgress }}
-          className="text-white text-5xl text-center mt-20 mb-20 font-bold"
-        >
-          With these tools I build projects such as
-        </motion.p>
-        {projectArray.map((project, i) => (
-          <div key={i} className="flex flex-col pl-28">
-            <div className="relative flex-col items-end flex pr-28">
+      <div id="Projects">
+        <div className="hidden md:block">
+          <motion.p
+            ref={ref}
+            style={{ opacity: scrollYProgress }}
+            className="text-white text-5xl text-center mt-20 mb-20 font-bold"
+          >
+            With these tools I build projects such as
+          </motion.p>
+          {projectArray.map((project, i) => (
+            <div key={i} className="flex flex-col pl-28">
+              <div className="relative flex-col items-end flex pr-28">
+                <div>
+                  <div className="flex items-center gap-4  mb-6 ">
+                    <h2 className="text-white text-4xl font-bold">
+                      InnerSoundscapes
+                    </h2>
+                    <div className="flex items-center gap-4">
+                      <a href={project.projectLinks.githubLink} target="_blank">
+                        <FaGithub className="fill-white size-7" />
+                      </a>
+                      <a href={project.projectLinks.pageLink} target="_blank">
+                        <FaExternalLinkAlt className="fill-white size-6" />
+                      </a>
+                    </div>
+                  </div>
+                  <Image
+                    key={project.alt}
+                    style={{ maxHeight: 540, maxWidth: 960 }}
+                    height={540}
+                    width={960}
+                    src={project.src}
+                    alt={project.alt}
+                    className="rounded-md"
+                  />
+                  <div className="flex h-20 items-center gap-4 pr-28 flex-wrap">
+                    {project.projectIcons.map((icon) => (
+                      <Image
+                        key={icon.alt}
+                        height={icon.height}
+                        width={icon.width}
+                        alt={icon.alt}
+                        src={icon.src}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {project.mobileAlt && (
+                <Image
+                  key={project.mobileAlt}
+                  height={900}
+                  width={179}
+                  src={project.mobileSrc}
+                  alt={project.mobileAlt}
+                  className="rounded-md flex-grow-0 self-end z-20 -mt-60 mr-20"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="md:hidden block">
+          {projectArray.map((project, i) => (
+            <div key={i} className="flex flex-col justify-center items-center">
               <div>
-                <div className="flex items-center gap-4  mb-6 ">
+                <div className="flex justify-center items-center gap-4  mb-6 ">
                   <h2 className="text-white text-4xl font-bold">
                     InnerSoundscapes
                   </h2>
-                  <div className="flex items-center gap-4">
+                  <div className="flex justify-center items-center gap-4">
                     <a href={project.projectLinks.githubLink} target="_blank">
                       <FaGithub className="fill-white size-7" />
                     </a>
@@ -69,67 +124,14 @@ export default function Projects() {
                 </div>
                 <Image
                   key={project.alt}
-                  style={{ maxHeight: 540, maxWidth: 960 }}
-                  height={540}
-                  width={960}
                   src={project.src}
                   alt={project.alt}
-                  className="rounded-md"
+                  className="rounded-md w-[600px]"
                 />
-                <div className="flex h-20 items-center gap-4 pr-28 flex-wrap">
-                  {project.projectIcons.map((icon) => (
-                    <Image
-                      key={icon.alt}
-                      height={icon.height}
-                      width={icon.width}
-                      alt={icon.alt}
-                      src={icon.src}
-                    />
-                  ))}
-                </div>
               </div>
             </div>
-
-            {project.mobileAlt && (
-              <Image
-                key={project.mobileAlt}
-                height={900}
-                width={179}
-                src={project.mobileSrc}
-                alt={project.mobileAlt}
-                className="rounded-md flex-grow-0 self-end z-20 -mt-60 mr-20"
-              />
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div className="md:hidden block">
-        {projectArray.map((project, i) => (
-          <div key={i} className="flex flex-col justify-center items-center">
-            <div>
-              <div className="flex justify-center items-center gap-4  mb-6 ">
-                <h2 className="text-white text-4xl font-bold">
-                  InnerSoundscapes
-                </h2>
-                <div className="flex justify-center items-center gap-4">
-                  <a href={project.projectLinks.githubLink} target="_blank">
-                    <FaGithub className="fill-white size-7" />
-                  </a>
-                  <a href={project.projectLinks.pageLink} target="_blank">
-                    <FaExternalLinkAlt className="fill-white size-6" />
-                  </a>
-                </div>
-              </div>
-              <Image
-                key={project.alt}
-                src={project.src}
-                alt={project.alt}
-                className="rounded-md w-[600px]"
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
