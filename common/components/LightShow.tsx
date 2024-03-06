@@ -41,7 +41,7 @@ export function LightFragment({ count, reverse }: LightFragmentProps) {
   // On render trigger the createLightFragment function
   useEffect(() => {
     createLightFragment(count);
-  }, []);
+  });
 
   function createLightFragment(amount: number) {
     const tempArr = []; // Create temp array to store the fragment objects
@@ -58,7 +58,6 @@ export function LightFragment({ count, reverse }: LightFragmentProps) {
       };
       tempArr.push(fragment);
     }
-    console.log(reverse);
     reverse ? setFragmentArr(tempArr.reverse()) : setFragmentArr(tempArr);
   }
 
