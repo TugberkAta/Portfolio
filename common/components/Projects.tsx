@@ -103,31 +103,34 @@ export default function Projects() {
           </div>
         ))}
       </div>
-      {projectArray.map((project, i) => (
-        <div key={i} className="flex flex-col justify-center items-center">
-          <div>
-            <div className="flex justify-center items-center gap-4  mb-6 ">
-              <h2 className="text-white text-4xl font-bold">
-                InnerSoundscapes
-              </h2>
-              <div className="flex justify-center items-center gap-4">
-                <a href={project.projectLinks.githubLink} target="_blank">
-                  <FaGithub className="fill-white size-7" />
-                </a>
-                <a href={project.projectLinks.pageLink} target="_blank">
-                  <FaExternalLinkAlt className="fill-white size-6" />
-                </a>
+
+      <div className="md:hidden block">
+        {projectArray.map((project, i) => (
+          <div key={i} className="flex flex-col justify-center items-center">
+            <div>
+              <div className="flex justify-center items-center gap-4  mb-6 ">
+                <h2 className="text-white text-4xl font-bold">
+                  InnerSoundscapes
+                </h2>
+                <div className="flex justify-center items-center gap-4">
+                  <a href={project.projectLinks.githubLink} target="_blank">
+                    <FaGithub className="fill-white size-7" />
+                  </a>
+                  <a href={project.projectLinks.pageLink} target="_blank">
+                    <FaExternalLinkAlt className="fill-white size-6" />
+                  </a>
+                </div>
               </div>
+              <Image
+                key={project.alt}
+                src={project.src}
+                alt={project.alt}
+                className="rounded-md w-[600px]"
+              />
             </div>
-            <Image
-              key={project.alt}
-              src={project.src}
-              alt={project.alt}
-              className="rounded-md w-[600px]"
-            />
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 }
