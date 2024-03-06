@@ -45,6 +45,7 @@ export default function Projects() {
       <motion.p
         ref={ref}
         style={{ opacity: scrollYProgress }}
+        id="Projects"
         className="text-white text-5xl text-center mt-20 mb-20 font-bold"
       >
         With these tools I build projects such as
