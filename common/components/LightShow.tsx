@@ -2,9 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { nunito } from "../styles/fonts";
 
-export default function LightShow() {
+type LightShowProps = {
+  count: number;
+  reverse?: boolean;
+};
+
+export default function LightShow({ count, reverse }: LightShowProps) {
   return (
     <>
       <motion.div
@@ -13,10 +17,7 @@ export default function LightShow() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <p className={`text-white text-3xl font-bold ${nunito.className}`}>
-          Crafting Excellence, Code by Code.
-        </p>
-        <LightFragment count={20} />
+        <LightFragment count={count} reverse={reverse} />
       </motion.div>
     </>
   );
@@ -30,9 +31,10 @@ type FragmentArr = {
 
 type LightFragmentProps = {
   count: number;
+  reverse?: boolean;
 };
 
-export function LightFragment({ count }: LightFragmentProps) {
+export function LightFragment({ count, reverse }: LightFragmentProps) {
   // Create state for the fragment array
   const [fragmentArr, setFragmentArr] = useState<FragmentArr[]>([]);
 
@@ -56,7 +58,8 @@ export function LightFragment({ count }: LightFragmentProps) {
       };
       tempArr.push(fragment);
     }
-    setFragmentArr(tempArr);
+    console.log(reverse);
+    reverse ? setFragmentArr(tempArr.reverse()) : setFragmentArr(tempArr);
   }
 
   return (
