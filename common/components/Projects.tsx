@@ -49,8 +49,8 @@ const projectArray = [
       { height: 90, width: 90, alt: "Mongo Db Icon", src: mongoDbIcon },
     ],
     projectLinks: {
-      githubLink: "https://github.com/TugberkAta/Innersoundscapes",
-      pageLink: "https://www.innersoundscapes.com/homepage",
+      githubLink: "https://github.com/TugberkAta/Foodle",
+      pageLink: "https://www.foodle.fun",
     },
   },
 ];
@@ -99,7 +99,7 @@ export default function Projects() {
                   alt={project.alt}
                   className="rounded-md"
                 />
-                <div className="flex h-20 items-center gap-4 md:mb-20 flex-wrap">
+                <div className="flex h-20 items-center gap-4 md:mt-6 mb-8 md:mb-20 flex-wrap">
                   {project.projectIcons.map((icon) => (
                     <Image
                       key={icon.alt}
