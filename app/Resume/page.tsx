@@ -5,7 +5,7 @@ export default function Resume() {
     <>
       <embed
         className=" w-full h-screen"
-        src="https://drive.google.com/file/d/14Ahu47dTE54lTagEJTLvor2m6k5T8QeY/preview?usp=sharing"
+        src="https://drive.google.com/file/d/1iFIKgaaKbZVkvtIJiFk5_H9JGjh6ucxP/preview?usp=sharing"
         type=""
       />
     </>
