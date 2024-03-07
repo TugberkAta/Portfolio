@@ -83,10 +83,18 @@ export default function Projects() {
                     {project.name}
                   </h2>
                   <div className="flex items-center gap-4">
-                    <a href={project.projectLinks.githubLink} target="_blank">
+                    <a
+                      href={project.projectLinks.githubLink}
+                      aria-label="External link to the project repo on github"
+                      target="_blank"
+                    >
                       <FaGithub className="fill-white size-7" />
                     </a>
-                    <a href={project.projectLinks.pageLink} target="_blank">
+                    <a
+                      href={project.projectLinks.pageLink}
+                      aria-label="External link to the project website"
+                      target="_blank"
+                    >
                       <FaExternalLinkAlt className="fill-white size-6" />
                     </a>
                   </div>

@@ -39,10 +39,15 @@ export default function Conclusion() {
           atatugberkwork@gmail.com
         </p>
         <div className="flex gap-4">
-          <a href="https://github.com/TugberkAta" target="_blank">
+          <a
+            href="https://github.com/TugberkAta"
+            aria-label="Link to my github profile"
+            target="_blank"
+          >
             <FaGithub className="size-16 fill-white"></FaGithub>
           </a>
           <a
+            aria-label="link to my linkedin profile"
             href="https://www.linkedin.com/in/tuğberk-ata-617721162/"
             target="_blank"
           >
