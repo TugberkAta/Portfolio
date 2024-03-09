@@ -57,7 +57,7 @@ export default function Conclusion() {
       </motion.div>
       <ScrollToTop></ScrollToTop>
       <div className="flex items-center w-full gap-4 justify-center">
-        <p className=" text-gray-400 text-l text-center font-bold">
+        <p className=" text-gray-400 mb-4 text-l text-center font-bold">
           ©2024 Tuğberk Ata
         </p>
       </div>
