@@ -10,7 +10,9 @@ A visually engaging and interactive portfolio website built with Next.js, Tailwi
 <h2>Design Made With Tailwind Mocked Using Figma</h2>
 <img src="https://i.imgur.com/IArCuQN.png">
 
-<h2>Pagespeed Insight Analytics </h2>
-<img src="https://i.imgur.com/VoH1555.png">
+<h2>Pagespeed Insight Analytics For Desktop</h2>
+<img src="https://i.imgur.com/WXUEGYg.png">
 
+<h2>Pagespeed Insight Analytics For Mobile</h2>
+<img src="https://i.imgur.com/mElHVWa.png">
 
