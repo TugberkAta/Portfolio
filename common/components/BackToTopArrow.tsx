@@ -1,5 +1,4 @@
 import { motion, useScroll } from "framer-motion";
-import { useEffect } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
 export default function BackToTopArrow() {
@@ -25,6 +24,7 @@ export default function BackToTopArrow() {
       id="top-arrow"
       onClick={() => goToTop()}
       type="button"
+      aria-label="scroll-to-top"
       style={{ opacity: scrollYProgress }}
     >
       <IoIosArrowUp className="fill-gray-300 size-5 " />

@@ -40,7 +40,7 @@ export default function Introduction() {
             WebkitMaskSize: `${maskSize}px`,
           }}
           transition={{ type: "tween", ease: "backOut" }}
-          className="absolute w-full hidden md:block text-green-400 bg-white mask md:p-32 z-10 md:cursor-none"
+          className="absolute w-full hidden md:block text-green-600 bg-white mask md:p-32 z-10 md:cursor-none"
           onMouseEnter={() => {
             setIsHovered(true);
           }}
