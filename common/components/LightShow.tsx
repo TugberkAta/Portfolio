@@ -13,7 +13,7 @@ export default function LightShow({ count, reverse }: LightShowProps) {
   return (
     <>
       <motion.div
-        className="flex flex-col w-screen gap-5 items-center justify-center"
+        className="flex flex-col w-screen h-[427.81px] gap-5 items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
