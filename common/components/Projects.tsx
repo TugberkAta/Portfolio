@@ -23,11 +23,11 @@ const projectArray = [
     mobileSrc: innerSoundscapesMobile,
     mobileAlt: " InnerSoundscapes Mobile Preview",
     projectIcons: [
-      { height: 40, width: 40, alt: "React Icon", src: reactIcon },
-      { height: 120, width: 120, alt: "Tailwind Icon", src: tailwindCssIcon },
-      { height: 60, width: 80, alt: "nodejs Icon", src: nodeJsIcon },
-      { height: 100, width: 100, alt: "Express Icon", src: expressIcon },
-      { height: 90, width: 90, alt: "Mongo Db Icon", src: mongoDbIcon },
+      { width: 40, alt: "React Icon", src: reactIcon },
+      { width: 120, alt: "Tailwind Icon", src: tailwindCssIcon },
+      { width: 80, alt: "nodejs Icon", src: nodeJsIcon },
+      { width: 100, alt: "Express Icon", src: expressIcon },
+      { width: 90, alt: "Mongo Db Icon", src: mongoDbIcon },
     ],
     projectLinks: {
       githubLink: "https://github.com/TugberkAta/Innersoundscapes",
@@ -41,12 +41,12 @@ const projectArray = [
     mobileSrc: foodleMobile,
     mobileAlt: " Foodle Mobile Preview",
     projectIcons: [
-      { height: 40, width: 40, alt: "TypeScript Icon", src: typeScriptIcon },
-      { height: 40, width: 40, alt: "React Icon", src: reactIcon },
-      { height: 120, width: 120, alt: "Tailwind Icon", src: tailwindCssIcon },
-      { height: 60, width: 80, alt: "nodejs Icon", src: nodeJsIcon },
-      { height: 100, width: 100, alt: "Express Icon", src: expressIcon },
-      { height: 90, width: 90, alt: "Mongo Db Icon", src: mongoDbIcon },
+      { width: 40, alt: "TypeScript Icon", src: typeScriptIcon },
+      { width: 40, alt: "React Icon", src: reactIcon },
+      { width: 120, alt: "Tailwind Icon", src: tailwindCssIcon },
+      { width: 80, alt: "nodejs Icon", src: nodeJsIcon },
+      { width: 100, alt: "Express Icon", src: expressIcon },
+      { width: 90, alt: "Mongo Db Icon", src: mongoDbIcon },
     ],
     projectLinks: {
       githubLink: "https://github.com/TugberkAta/Foodle",
@@ -101,7 +101,6 @@ export default function Projects() {
                 </div>
                 <Image
                   key={project.alt}
-                  height={540}
                   width={960}
                   src={project.src}
                   alt={project.alt}
@@ -111,7 +110,6 @@ export default function Projects() {
                   {project.projectIcons.map((icon) => (
                     <Image
                       key={icon.alt}
-                      height={icon.height}
                       width={icon.width}
                       alt={icon.alt}
                       src={icon.src}
@@ -121,7 +119,6 @@ export default function Projects() {
                 {project.mobileAlt && (
                   <Image
                     key={project.mobileAlt}
-                    height={900}
                     width={179}
                     src={project.mobileSrc}
                     alt={project.mobileAlt}

@@ -15,15 +15,15 @@ import Image from "next/image";
 
 // Icon array to be used in mapping of icons
 const iconArray = [
-  { height: 90, width: 90, alt: "TypeScript Icon", src: typeScriptIcon },
-  { height: 90, width: 90, alt: "React Icon", src: reactIcon },
-  { height: 160, width: 160, alt: "Next Js Icon", src: nextJsIcon },
-  { height: 200, width: 200, alt: "Express Icon", src: expressIcon },
-  { height: 300, width: 200, alt: "Tailwind Icon", src: tailwindCssIcon },
-  { height: 120, width: 120, alt: "nodejs Icon", src: nodeJsIcon },
-  { height: 180, width: 180, alt: "Mongo Db Icon", src: mongoDbIcon },
-  { height: 50, width: 50, alt: "Framer Motion Icon", src: framerMotionIcon },
-  { height: 90, width: 90, alt: "Swift Icon", src: swiftIcon },
+  { width: 90, alt: "TypeScript Icon", src: typeScriptIcon },
+  { width: 90, alt: "React Icon", src: reactIcon },
+  { width: 160, alt: "Next Js Icon", src: nextJsIcon },
+  { width: 200, alt: "Express Icon", src: expressIcon },
+  { width: 200, alt: "Tailwind Icon", src: tailwindCssIcon },
+  { width: 120, alt: "nodejs Icon", src: nodeJsIcon },
+  { width: 180, alt: "Mongo Db Icon", src: mongoDbIcon },
+  { width: 50, alt: "Framer Motion Icon", src: framerMotionIcon },
+  { width: 90, alt: "Swift Icon", src: swiftIcon },
 ];
 
 export default function SkillIcons() {
@@ -43,7 +43,6 @@ export default function SkillIcons() {
               key={icon.alt}
               index={i}
               total={iconArray.length}
-              height={icon.height}
               width={icon.width}
               alt={icon.alt}
               src={icon.src}
@@ -57,7 +56,6 @@ export default function SkillIcons() {
               key={icon.alt}
               index={i + 4} // Adding the already offset index to regulate the animation
               total={iconArray.length}
-              height={icon.height}
               width={icon.width}
               alt={icon.alt}
               src={icon.src}
@@ -71,7 +69,6 @@ export default function SkillIcons() {
               key={icon.alt}
               index={i + 7}
               total={iconArray.length}
-              height={icon.height}
               width={icon.width}
               alt={icon.alt}
               src={icon.src}
@@ -85,7 +82,6 @@ export default function SkillIcons() {
 }
 
 type IconProps = {
-  height: number;
   width: number;
   alt: string;
   src: any;
@@ -93,7 +89,6 @@ type IconProps = {
 };
 
 export function Icon({
-  height,
   width,
   alt,
   src,
@@ -110,7 +105,7 @@ export function Icon({
 
   return (
     <motion.div style={{ opacity: opacity }}>
-      <Image height={height} width={width} alt={alt} src={src} />
+      <Image width={width} alt={alt} src={src} />
     </motion.div>
   );
 }
