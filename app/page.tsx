@@ -19,7 +19,7 @@ export default function Home() {
       <ReactLenis root>
         <div className="bg-gray-950 flex-col h-fit w-screen">
           <Navigation />
-          <div className="mt-20 mb-20 flex flex-col items-center">
+          <div className="mt-20 mb-40 md:mb-20 flex flex-col items-center">
             <p
               className={`text-white text-center text-3xl mb-4 font-bold ${nunito.className}`}
             >
@@ -27,7 +27,9 @@ export default function Home() {
             </p>
             <LightShow count={20} />
           </div>
-          <Introduction></Introduction>
+          <div className="mb-40">
+            <Introduction></Introduction>
+          </div>
           <SkillIcons></SkillIcons>
           <div className="mt-40 mb-20">
             <Projects></Projects>

@@ -69,66 +69,67 @@ export default function Projects() {
         <motion.p
           ref={ref}
           style={{ opacity: scrollYProgress }}
-          className="text-white text-5xl text-center mt-20 mb-20 font-bold"
+          className="text-white text-5xl text-center mt-20 mb-20 font-bold "
         >
           With these tools I build projects such as
         </motion.p>
-
-        {projectArray.map((project, i) => (
-          <div key={i} className="flex flex-col ">
-            <div className="flex-col items-center flex">
-              <div className="relative mb-20 md:mb-0">
-                <div className="flex justify-center items-center gap-4 mb-6 ">
-                  <h2 className="text-white text-2xl md:text-4xl font-bold">
-                    {project.name}
-                  </h2>
-                  <div className="flex items-center gap-4">
-                    <a
-                      href={project.projectLinks.githubLink}
-                      aria-label="External link to the project repo on github"
-                      target="_blank"
-                    >
-                      <FaGithub className="fill-white size-7" />
-                    </a>
-                    <a
-                      href={project.projectLinks.pageLink}
-                      aria-label="External link to the project website"
-                      target="_blank"
-                    >
-                      <FaExternalLinkAlt className="fill-white size-6" />
-                    </a>
+        <div className="flex flex-col gap-20">
+          {projectArray.map((project, i) => (
+            <div key={i} className="flex flex-col ">
+              <div className="flex-col items-center flex">
+                <div className="relative  md:mb-0">
+                  <div className="flex justify-center items-center gap-4 mb-6 ">
+                    <h2 className="text-white text-2xl md:text-4xl font-bold">
+                      {project.name}
+                    </h2>
+                    <div className="flex items-center gap-4">
+                      <a
+                        href={project.projectLinks.githubLink}
+                        aria-label="External link to the project repo on github"
+                        target="_blank"
+                      >
+                        <FaGithub className="fill-white size-7" />
+                      </a>
+                      <a
+                        href={project.projectLinks.pageLink}
+                        aria-label="External link to the project website"
+                        target="_blank"
+                      >
+                        <FaExternalLinkAlt className="fill-white size-6" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <Image
-                  key={project.alt}
-                  width={960}
-                  src={project.src}
-                  alt={project.alt}
-                  className="rounded-md"
-                />
-                <div className="flex h-20 items-center gap-4 mt-6 mb-8 md:mb-20 flex-wrap">
-                  {project.projectIcons.map((icon) => (
-                    <Image
-                      key={icon.alt}
-                      width={icon.width}
-                      alt={icon.alt}
-                      src={icon.src}
-                    />
-                  ))}
-                </div>
-                {project.mobileAlt && (
                   <Image
-                    key={project.mobileAlt}
-                    width={179}
-                    src={project.mobileSrc}
-                    alt={project.mobileAlt}
-                    className="hidden md:block absolute right-10 z-10 bottom-28 rounded-md"
+                    key={project.alt}
+                    width={960}
+                    src={project.src}
+                    alt={project.alt}
+                    className="rounded-md"
                   />
-                )}
+                  <div className="flex h-20 items-center justify-center md:justify-normal gap-4 mt-6 mb-8 ml-4 mr-4 md:mb-20 flex-wrap">
+                    {project.projectIcons.map((icon) => (
+                      <Image
+                        key={icon.alt}
+                        width={icon.width}
+                        alt={icon.alt}
+                        src={icon.src}
+                      />
+                    ))}
+                  </div>
+                  {project.mobileAlt && (
+                    <Image
+                      key={project.mobileAlt}
+                      width={179}
+                      src={project.mobileSrc}
+                      alt={project.mobileAlt}
+                      className="hidden md:block absolute right-10 z-10 bottom-28 rounded-md"
+                    />
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
