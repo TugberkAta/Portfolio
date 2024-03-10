@@ -2,7 +2,7 @@
 
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
-import LightShow from "./LightShow";
+import { IoIosArrowUp } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { useRef } from "react";
 
@@ -68,7 +68,7 @@ export default function Conclusion() {
 export function ScrollToTop() {
   return (
     <button
-      className="mb-20 flex flex-col"
+      className="mb-20 flex w-full items-center flex-col"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
       <motion.div
@@ -81,8 +81,9 @@ export function ScrollToTop() {
           ease: "easeInOut",
           repeatType: "loop",
         }}
+        className="flex flex-col items-center"
       >
-        <LightShow count={4} reverse={true}></LightShow>
+        <IoIosArrowUp className="fill-white"></IoIosArrowUp>
         <p className="text-white text-center mt-2 font-medium">
           Go back to top
         </p>
