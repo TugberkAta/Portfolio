@@ -9,6 +9,7 @@ import typeScriptIcon from "../../public/icons/typescript.svg";
 import reactIcon from "../../public/icons/react.svg";
 import mongoDbIcon from "../../public/icons/mongodb.svg";
 import swiftIcon from "../../public/icons/swift.svg";
+import postgresqlIcon from "../../public/icons/postgresql.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
@@ -21,6 +22,7 @@ const iconArray = [
   { width: 200, alt: "Express Icon", src: expressIcon },
   { width: 200, alt: "Tailwind Icon", src: tailwindCssIcon },
   { width: 120, alt: "nodejs Icon", src: nodeJsIcon },
+  { width: 80, alt: "Postgresql Icon", src: postgresqlIcon },
   { width: 180, alt: "Mongo Db Icon", src: mongoDbIcon },
   { width: 50, alt: "Framer Motion Icon", src: framerMotionIcon },
   { width: 90, alt: "Swift Icon", src: swiftIcon },
