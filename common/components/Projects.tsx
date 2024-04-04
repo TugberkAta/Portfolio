@@ -4,12 +4,16 @@ import Image from "next/image";
 import innerSoundscapesDesktop from "../../public/desktopInner.png";
 import innerSoundscapesMobile from "../../public/mobileInner.png";
 import foodleDesktop from "../../public/foodleDesktop.png";
+import nevermoreDesktop from "../../public/nevermoreDesktop.png";
+import nevermoreMobile from "../../public/nevermoreMobile.png";
 import foodleMobile from "../../public/foodleMobile.png";
 import mongoDbIcon from "../../public/icons/mongodb.svg";
 import expressIcon from "../../public/icons/express.svg";
 import reactIcon from "../../public/icons/react.svg";
 import tailwindCssIcon from "../../public/icons/tailwindcss.svg";
 import nodeJsIcon from "../../public/icons/nodejs.svg";
+import nextJsIcon from "../../public/icons/nextjs.svg";
+import postgresqlIcon from "../../public/icons/postgresql.svg";
 import typeScriptIcon from "../../public/icons/typescript.svg";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion, useScroll } from "framer-motion";
@@ -17,7 +21,25 @@ import { useRef } from "react";
 
 const projectArray = [
   {
-    name: "InnerSoundscapes",
+    name: "Sports E-commerce",
+    src: nevermoreDesktop,
+    alt: "Sports E-commerce Desktop Preview",
+    mobileSrc: nevermoreMobile,
+    mobileAlt: " Sports E-commerce Mobile Preview",
+    projectIcons: [
+      { width: 40, alt: "TypeScript Icon", src: typeScriptIcon },
+      { width: 80, alt: "NextJs Icon", src: nextJsIcon },
+      { width: 40, alt: "React Icon", src: reactIcon },
+      { width: 120, alt: "Tailwind Icon", src: tailwindCssIcon },
+      { width: 60, alt: "Postgresql Icon", src: postgresqlIcon },
+    ],
+    projectLinks: {
+      githubLink: "https://github.com/TugberkAta/Nevermore-Skateboards",
+      pageLink: "https://nevermore-skateboards.vercel.app",
+    },
+  },
+  {
+    name: "Music Magazine",
     src: innerSoundscapesDesktop,
     alt: "InnerSoundscapes Desktop Preview",
     mobileSrc: innerSoundscapesMobile,
@@ -122,7 +144,7 @@ export default function Projects() {
                       width={179}
                       src={project.mobileSrc}
                       alt={project.mobileAlt}
-                      className="hidden md:block absolute right-10 z-10 bottom-28 rounded-md"
+                      className="hidden md:block absolute right-10 z-10 bottom-5 rounded-md"
                     />
                   )}
                 </div>
