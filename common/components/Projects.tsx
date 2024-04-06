@@ -41,7 +41,7 @@ const projectArray = [
   },
   {
     name: "Innersoundscapes",
-    description: "An E-commerce Site",
+    description: "A Music Magazine Site",
     src: innerSoundscapesDesktop,
     alt: "InnerSoundscapes Desktop Preview",
     mobileSrc: innerSoundscapesMobile,
@@ -60,7 +60,7 @@ const projectArray = [
   },
   {
     name: "Foodle",
-    description: "Puzzle Site",
+    description: "A Puzzle Site",
     src: foodleDesktop,
     alt: "Foodle Desktop Preview",
     mobileSrc: foodleMobile,
