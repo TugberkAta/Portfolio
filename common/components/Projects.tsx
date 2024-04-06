@@ -21,7 +21,8 @@ import { useRef } from "react";
 
 const projectArray = [
   {
-    name: "Nevermore Skateboards | An E-commerce Site",
+    name: "Nevermore Skateboards",
+    description: "An E-commerce Site",
     src: nevermoreDesktop,
     alt: "Sports E-commerce Desktop Preview",
     mobileSrc: nevermoreMobile,
@@ -39,7 +40,8 @@ const projectArray = [
     },
   },
   {
-    name: "Innersoundscapes | A Music Magazine Website ",
+    name: "Innersoundscapes",
+    description: "An E-commerce Site",
     src: innerSoundscapesDesktop,
     alt: "InnerSoundscapes Desktop Preview",
     mobileSrc: innerSoundscapesMobile,
@@ -57,7 +59,8 @@ const projectArray = [
     },
   },
   {
-    name: "Foodle | Puzzle Site",
+    name: "Foodle",
+    description: "Puzzle Site",
     src: foodleDesktop,
     alt: "Foodle Desktop Preview",
     mobileSrc: foodleMobile,
@@ -101,8 +104,11 @@ export default function Projects() {
               <div className="flex-col items-center flex">
                 <div className="relative  md:mb-0">
                   <div className="flex justify-center items-center gap-4 mb-6 ">
-                    <h2 className="text-white text-2xl md:text-4xl font-bold">
-                      {project.name}
+                    <h2 className="text-white flex gap-2 text-2xl md:text-4xl font-bold">
+                      <p>{project.name}</p>{" "}
+                      <p className="hidden md:block">
+                        {"| " + project.description}
+                      </p>
                     </h2>
                     <div className="flex items-center gap-4">
                       <a
