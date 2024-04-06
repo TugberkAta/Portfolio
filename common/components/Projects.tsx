@@ -21,7 +21,7 @@ import { useRef } from "react";
 
 const projectArray = [
   {
-    name: "Sports E-commerce",
+    name: "Nevermore Skateboards | An E-commerce Site",
     src: nevermoreDesktop,
     alt: "Sports E-commerce Desktop Preview",
     mobileSrc: nevermoreMobile,
@@ -39,7 +39,7 @@ const projectArray = [
     },
   },
   {
-    name: "Music Magazine",
+    name: "Innersoundscapes | A Music Magazine Website ",
     src: innerSoundscapesDesktop,
     alt: "InnerSoundscapes Desktop Preview",
     mobileSrc: innerSoundscapesMobile,
@@ -57,7 +57,7 @@ const projectArray = [
     },
   },
   {
-    name: "Foodle",
+    name: "Foodle | Puzzle Site",
     src: foodleDesktop,
     alt: "Foodle Desktop Preview",
     mobileSrc: foodleMobile,
