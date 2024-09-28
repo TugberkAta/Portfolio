@@ -55,7 +55,7 @@ const projectArray = [
     ],
     projectLinks: {
       githubLink: "https://github.com/TugberkAta/Innersoundscapes",
-      pageLink: "https://www.innersoundscapes.com/homepage",
+      // pageLink: "https://www.innersoundscapes.com/homepage",
     },
   },
   {
@@ -75,7 +75,7 @@ const projectArray = [
     ],
     projectLinks: {
       githubLink: "https://github.com/TugberkAta/Foodle",
-      pageLink: "https://www.foodle.fun",
+      // pageLink: "https://www.foodle.fun",
     },
   },
 ];
@@ -118,13 +118,15 @@ export default function Projects() {
                       >
                         <FaGithub className="fill-white size-7" />
                       </a>
-                      <a
-                        href={project.projectLinks.pageLink}
-                        aria-label="External link to the project website"
-                        target="_blank"
-                      >
-                        <FaExternalLinkAlt className="fill-white size-6" />
-                      </a>
+                      {project.projectLinks.pageLink && (
+                        <a
+                          href={project.projectLinks.pageLink}
+                          aria-label="External link to the project website"
+                          target="_blank"
+                        >
+                          <FaExternalLinkAlt className="fill-white size-6" />
+                        </a>
+                       )}
                     </div>
                   </div>
                   <Image
